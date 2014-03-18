@@ -1,0 +1,22 @@
+{
+  "name": "Jadestrappin-libsass",
+  "version": "0.0.1",
+  "description": "Bootstrap 3 Sass + Jade template with gulpjs.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "gulp",
+    "postinstall": "bower install && gulp init",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Masaaki Komori",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp-rename": "*",
+    "gulp-sass": "*",
+    "gulp-jade": "*",
+    "gulp-minify-css": "*",
+    "gulp-prettify": "*",
+    "gulp-connect": "*",
+    "gulp": "*"
+  }
+}

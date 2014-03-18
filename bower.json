@@ -1,0 +1,22 @@
+{
+  "name": "Jadestrappin-libsass",
+  "version": "0.0.1",
+  "authors": [
+    "cipher <gmgateway@gmail.com>"
+  ],
+  "description": "Bootstrap 3 Sass + Jade template with gulpjs.",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "*",
+    "bootstrap-sass-official": "*",
+    "bootstrap-accessibility-plugin": "https://github.com/paypal/bootstrap-accessibility-plugin/archive/master.zip"
+  }
+}
