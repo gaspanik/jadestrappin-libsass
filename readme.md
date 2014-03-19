@@ -16,6 +16,6 @@ Run gulp
 
 	$ npm start
 
-## Changes 0.0.1
+## Changes 0.0.2
 
-* Compile w/ node-sass.
+* Minify CSS w/ csso.

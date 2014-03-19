@@ -2,7 +2,7 @@ var gulp = require('gulp'),
   jade = require('gulp-jade'),
   prettify = require('gulp-prettify'),
   sass = require('gulp-sass'),
-  minifycss = require('gulp-minify-css'),
+  minifycss = require('gulp-csso'),
   rename = require('gulp-rename'),
   connect = require('gulp-connect');
 
