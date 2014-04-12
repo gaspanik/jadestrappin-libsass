@@ -19,12 +19,15 @@ gulp.task('init', function() {
     .pipe(gulp.dest('dist/js'));
 });
 
-gulp.task('connect', connect.server({
-  root: ['dist'], // If you use newer gulp-connect, change > root: ['dist'],
-  port: 1337,
-  livereload: true,
-  open: {} // Open default browser.
-}));
+gulp.task('connect', function() {
+  connect.server({
+    root: ['dist'], // If you use newer gulp-connect, change > root: ['dist'],
+    port: 1337,
+    livereload: true
+    // Open default browser. Support for gulp-connect 1.x
+    // open: {} 
+  })
+});
 
 gulp.task('jade', function() {
   gulp.src('src/templates/*.jade')

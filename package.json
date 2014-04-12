@@ -1,6 +1,6 @@
 {
   "name": "Jadestrappin-libsass",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Bootstrap 3 Sass + Jade template with gulpjs.",
   "main": "gulpfile.js",
   "scripts": {
@@ -17,6 +17,7 @@
     "gulp-csso": "*",
     "gulp-prettify": "*",
     "gulp-connect": "*",
-    "gulp": "*"
+    "gulp": "*",
+    "marked": "*"
   }
 }
