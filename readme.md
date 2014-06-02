@@ -16,8 +16,8 @@ Run gulp
 
 	$ npm start
 
-Open [http://localhost:1337](http://localhost:1337) with your favorite browser.
+Browser-Sync detect local file changes.
 
-## Changes 0.0.3
+## Changes 0.0.4
 
-* Add marked and Minor tweaks for gulp-connect.
+* Detect file changes w/ Browser-Sync
