@@ -17,7 +17,7 @@
     "gulp-jade": "*",
     "gulp-csso": "*",
     "gulp-prettify": "*",
-    "gulp": "*",
+    "gulp": "~3.7.0",
     "marked": "*"
   }
 }
