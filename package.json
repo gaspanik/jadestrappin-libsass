@@ -13,7 +13,7 @@
   "devDependencies": {
     "browser-sync": "*",
     "gulp-rename": "*",
-    "gulp-sass": "*",
+    "gulp-sass": "~0.7.1",
     "gulp-jade": "*",
     "gulp-csso": "*",
     "gulp-prettify": "*",
