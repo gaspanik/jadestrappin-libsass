@@ -9,13 +9,13 @@ var gulp = require('gulp'),
 gulp.task('init', function() {
 	gulp.src('bower/bootstrap-sass-official/vendor/assets/stylesheets/**')
 		.pipe(gulp.dest('src/css'))
-		.pipe(gulp.src('bower/bootstrap-sass-official/vendor/assets/fonts/**'))
+	gulp.src('bower/bootstrap-sass-official/vendor/assets/fonts/**')
 		.pipe(gulp.dest('dist/css'))
-		.pipe(gulp.src('bower/bootstrap-accessibility-plugin/plugins/css/**'))
+	gulp.src('bower/bootstrap-accessibility-plugin/plugins/css/**')
 		.pipe(gulp.dest('dist/css'))
-		.pipe(gulp.src('bower/bootstrap-accessibility-plugin/plugins/js/bootstrap-accessibility.min.js'))
+	gulp.src('bower/bootstrap-accessibility-plugin/plugins/js/bootstrap-accessibility.min.js')
 		.pipe(gulp.dest('dist/js'))
-		.pipe(gulp.src('bower/jquery/dist/jquery.min.js'))
+	gulp.src('bower/jquery/dist/jquery.min.js')
 		.pipe(gulp.dest('dist/js'));
 });
 
@@ -23,7 +23,8 @@ gulp.task('bs', function() {
 	browserSync.init(null, {
 		server: {
 			baseDir: "./dist"
-		}
+		},
+            notify: false
 	});
 });
 
@@ -45,11 +46,11 @@ gulp.task('styles', function() {
 	// If you need sourcemaps, pls. rewrite below options to {style: 'expanded' , sourcemap: true}.
 	// But you need to install sass 3.3.
 	// If you use bunde install, run 'bundle install --path yourpath' and rewrite option to {bundleExec: true, style: 'expanded' , sourcemap: true}.
-	.pipe(sass({
-		style: 'expanded',
-		sourcemaps: true,
-		includePaths: 'src/css/bootstrap'
-	}))
+	       .pipe(sass({
+	       	style: 'expanded',
+	       	sourcemaps: true,
+	       	includePaths: 'src/css/bootstrap'
+	       }))
 		.pipe(gulp.dest('dist/css'))
 		.pipe(rename({
 			suffix: '.min'
