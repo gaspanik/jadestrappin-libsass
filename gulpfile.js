@@ -24,7 +24,8 @@ gulp.task('bs', function() {
     server: {
       baseDir: "./dist"
     },
-    notify: false
+    notify: false,
+    xip: true
   });
 });
 
@@ -46,21 +47,21 @@ gulp.task('styles', function() {
   // If you need sourcemaps, pls. rewrite below options to {style: 'expanded' , sourcemap: true}.
   // But you need to install sass 3.3.
   // If you use bunde install, run 'bundle install --path yourpath' and rewrite option to {bundleExec: true, style: 'expanded' , sourcemap: true}.
-  .pipe(sass({
-    style: 'expanded',
-    sourceComments: 'map',
-    includePaths: 'src/css/bootstrap'
-  }))
-  .pipe(gulp.dest('dist/css'))
-  .pipe(rename({
-    suffix: '.min'
-  }))
-  .pipe(minifycss())
-  .pipe(gulp.dest('dist/css'))
-  .pipe(browserSync.reload({
-    stream: true,
-    once: true
-  }));
+    .pipe(sass({
+      style: 'expanded',
+      sourceComments: 'map',
+      includePaths: 'src/css/bootstrap'
+    }))
+    .pipe(gulp.dest('dist/css'))
+    .pipe(rename({
+      suffix: '.min'
+    }))
+    .pipe(minifycss())
+    .pipe(gulp.dest('dist/css'))
+    .pipe(browserSync.reload({
+      stream: true,
+      once: true
+    }));
 });
 
 gulp.task('watch', function() {
