@@ -18,6 +18,6 @@ Run gulp
 
 Browser-Sync detect local file changes.
 
-## Changes 0.0.5
+## Changes 0.0.6
 
-* Support gulpjs 3.8.0
+* Minor tweaks.
