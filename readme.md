@@ -18,6 +18,6 @@ Run gulp
 
 Browser-Sync detect local file changes.
 
-## Changes 0.0.6
+## Changes 0.0.7
 
 * Minor tweaks.
