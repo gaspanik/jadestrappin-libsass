@@ -1,38 +1,23 @@
 var gulp = require('gulp'),
-  jade = require('gulp-jade'),
-  prettify = require('gulp-prettify'),
-  sass = require('gulp-sass'),
-  minifycss = require('gulp-csso'),
-  rename = require('gulp-rename'),
+  $ = require('gulp-load-plugins')({
+    pattern: ['gulp-*', 'gulp.*'],
+    replaceString: /\bgulp[\-.]/
+  }),
   browserSync = require('browser-sync');
-
-gulp.task('init', function() {
-  gulp.src('bower/bootstrap-sass-official/vendor/assets/stylesheets/**')
-    .pipe(gulp.dest('src/css'))
-  gulp.src('bower/bootstrap-sass-official/vendor/assets/fonts/**')
-    .pipe(gulp.dest('dist/css'))
-  gulp.src('bower/bootstrap-accessibility-plugin/plugins/css/**')
-    .pipe(gulp.dest('dist/css'))
-  gulp.src('bower/bootstrap-accessibility-plugin/plugins/js/bootstrap-accessibility.min.js')
-    .pipe(gulp.dest('dist/js'))
-  gulp.src('bower/jquery/dist/jquery.min.js')
-    .pipe(gulp.dest('dist/js'));
-});
 
 gulp.task('bs', function() {
   browserSync.init(null, {
     server: {
       baseDir: "./dist"
     },
-    notify: false,
-    xip: true
+    notify: true,
+    xip: false
   });
 });
 
-
 gulp.task('jade', function() {
-  gulp.src('src/templates/*.jade')
-    .pipe(jade())
+  return gulp.src('src/templates/*.jade')
+    .pipe($.jade())
     .pipe(gulp.dest('dist'))
   // If you need prettify HTML, uncomment below 2 lines.
   // .pipe(prettify())
@@ -43,20 +28,16 @@ gulp.task('jade', function() {
 });
 
 gulp.task('styles', function() {
-  gulp.src('src/css/*.scss')
-  // If you need sourcemaps, pls. rewrite below options to {style: 'expanded' , sourcemap: true}.
-  // But you need to install sass 3.3.
-  // If you use bunde install, run 'bundle install --path yourpath' and rewrite option to {bundleExec: true, style: 'expanded' , sourcemap: true}.
-    .pipe(sass({
+  return gulp.src('src/css/*.scss')
+    .pipe($.sass({
       style: 'expanded',
-      sourceComments: 'map',
       includePaths: 'src/css/bootstrap'
     }))
     .pipe(gulp.dest('dist/css'))
-    .pipe(rename({
+    .pipe($.rename({
       suffix: '.min'
     }))
-    .pipe(minifycss())
+    .pipe($.csso())
     .pipe(gulp.dest('dist/css'))
     .pipe(browserSync.reload({
       stream: true,
